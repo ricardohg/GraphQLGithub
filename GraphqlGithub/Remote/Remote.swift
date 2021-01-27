@@ -13,7 +13,7 @@ class Remote: ObservableObject {
     private let apiToken = "bearer a59e5b694b294326443d05e6fb803850034af003"
     private let graphQLURL = URL(string: "https://api.github.com/graphql")!
     
-    @Published var searches: Result<[Repository], Error>? = nil
+    @Published var repositories: Result<[Repository], Error>? = nil
     private var cancellable: AnyCancellable?
     
     func searchForGraphQLRepositories(with pageSize: Int, endCursor: String?) {
@@ -27,7 +27,7 @@ class Remote: ObservableObject {
         do {
             request = try operationQuery.getURLRequest(with: apiToken)
         } catch {
-            searches = .failure(error)
+            repositories = .failure(error)
             return
         }
         
@@ -36,16 +36,16 @@ class Remote: ObservableObject {
             .decode(type: GraphQLResult<Search>.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
         .catch({ (error) -> AnyPublisher<GraphQLResult<Search>, Never> in
-            self.searches = .failure(error)
+            self.repositories = .failure(error)
             return Empty(completeImmediately: true).eraseToAnyPublisher()
         })
         .sink(receiveValue: { search in
     
             guard let repositories = search.object?.nodes else {
-                self.searches = .success([])
+                self.repositories = .success([])
                 return
             }
-            self.searches = .success(repositories)
+            self.repositories = .success(repositories)
         })
         
     }
