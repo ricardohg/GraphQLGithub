@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var remote = Remote()
     var body: some View {
         Text("Hello, world")
             .padding()
+            .onAppear {
+                self.remote.searchForGraphQLRepositories(with: 10, endCursor: nil)
+            }
     }
 }
 
