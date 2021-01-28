@@ -45,7 +45,6 @@ struct RepositoryItem {
     let avatarURL: URL
 }
 
-
 extension Repository: Identifiable {
     var id: String { return name+owner.login }
 }

@@ -9,12 +9,12 @@ import SwiftUI
 
 struct RepositoryListView: View {
     
-    @StateObject var remote = RepositoryListViewModel()
+    @StateObject var viewModel = RepositoryListViewModel()
     
     private let pageSize = 25
     
     var body: some View {
-        if let repositories = remote.repositories {
+        if let repositories = viewModel.repositories {
             
             switch repositories {
             case .success(let repositories):
@@ -22,10 +22,10 @@ struct RepositoryListView: View {
                 List {
                     Section(footer:
                                 Group {
-                                    if remote.hasNextPage {
+                                    if viewModel.hasNextPage {
                                         ProgressView()
                                             .onAppear {
-                                                self.remote.searchForGraphQLRepositories(with: self.pageSize, endCursor: remote.endCursor)
+                                                self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: viewModel.endCursor)
                                             }
                                     }
                                 }
@@ -33,17 +33,7 @@ struct RepositoryListView: View {
                         
                         ForEach(repositories) { repository in
                             
-                            HStack {
-                                VStack {
-                                    Text(repository.name)
-                                    Text(repository.owner.login).foregroundColor(.gray)
-                                }
-                                Divider()
-                                Image(systemName: "star")
-                                Text("\(repository.stargazerCount)")
-                            }
-                            
-                            
+                            RepositoryItemView(repositoryItem: repository.itemModel)
                             
                         }
                         
@@ -59,7 +49,7 @@ struct RepositoryListView: View {
         else {
             ProgressView()
                 .onAppear {
-                    self.remote.searchForGraphQLRepositories(with: self.pageSize, endCursor: nil)
+                    self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: nil)
                 }
         }
     }

@@ -6,38 +6,38 @@
 //
 
 import Foundation
+import Combine
 
 let imageCache = NSCache<NSString, NSData>()
 
 class RepositoryItemViewModel: ObservableObject {
     
- private let baseUrl = URL(string: "https://www.livesurface.com/test/images")!
-    
     @Published var imageData: Data?
     
-    func loadImage(for imageUrl: URL) {
-        
-        // retrieves image data if already available in cache
-
-        if let imageFromCache = imageCache.object(forKey: imageUrl.absoluteString as NSString) {
-            self.imageData = Data(imageFromCache)
-            return
-        }
-        
-        let task = URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
-            
-            if let data = data {
-                
-                DispatchQueue.main.async {
-                    self.imageData = data
-                    imageCache.setObject(NSData(data: data), forKey: imageUrl.absoluteString as NSString)
+    private var cancellable: AnyCancellable?
     
-                }
-            }
-            
+    func loadImageFromCache(for imageURL: URL) -> Data? {
+        if let imageFromCache = imageCache.object(forKey: imageURL.absoluteString as NSString) {
+            return Data(imageFromCache)
         }
+        return nil
+    }
+    
+    func loadImage(for imageURL: URL) {
         
-        task.resume()
+       cancellable =  URLSession.shared.dataTaskPublisher(for: imageURL)
+            .map { $0.data }
+        .receive(on: DispatchQueue.main)
+        .catch({ error -> AnyPublisher<Data, Never> in
+            self.imageData = nil
+            print(error.localizedDescription)
+            return Empty(completeImmediately: true).eraseToAnyPublisher()
+        })
+        .sink(receiveValue: { data in
+            imageCache.setObject(NSData(data: data), forKey: imageURL.absoluteString as NSString)
+            self.imageData = data
+        })
+        
         
         
     }
