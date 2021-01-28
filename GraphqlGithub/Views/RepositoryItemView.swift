@@ -17,6 +17,7 @@ struct RepositoryItemView: View {
         var image: UIImage!
         let imageData = viewModel.imageData
         
+        // Load Image from cache if any, if not load Placeholder
         if let data = viewModel.loadImageFromCache(for: repositoryItem.avatarURL) {
             image = UIImage(data: data)
         }
@@ -32,11 +33,13 @@ struct RepositoryItemView: View {
                     Text(repositoryItem.login).foregroundColor(.gray)
                 }
                 Divider()
-                Image(systemName: "star")
-                Text("\(repositoryItem.stargazerCount)")
+                HStack {
+                    Image(systemName: "star").foregroundColor(.gray)
+                    Text("\(repositoryItem.stargazerCount)").foregroundColor(.gray)
+                }
+                Spacer()
                 Image(uiImage: image)
                     .resizable()
-                    .animation(.default)
                     .frame(width: 50, height: 50, alignment: .center)
                     .aspectRatio(contentMode: .fit)
                     .onAppear {
@@ -44,8 +47,11 @@ struct RepositoryItemView: View {
                             self.viewModel.loadImage(for: repositoryItem.avatarURL)
                         }
                     }
+
                 
             }
+            
+       
         }
     }
 }
