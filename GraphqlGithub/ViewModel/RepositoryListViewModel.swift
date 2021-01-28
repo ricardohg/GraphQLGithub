@@ -1,5 +1,5 @@
 //
-//  Remote.swift
+//  RepositoryListViewModel.swift
 //  GraphqlGithub
 //
 //  Created by ricardo hernandez  on 27/01/21.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-class Remote: ObservableObject {
+class RepositoryListViewModel: ObservableObject {
     
     private let apiToken = "bearer a59e5b694b294326443d05e6fb803850034af003"
     private let graphQLURL = URL(string: "https://api.github.com/graphql")!

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var remote = Remote()
+    @StateObject var remote = RepositoryListViewModel()
     var body: some View {
         Text("Hello, world")
             .padding()
