@@ -33,5 +33,5 @@ struct Owner: Decodable {
 
 
 extension Repository: Identifiable {
-    var id: String { return name }
+    var id: String { return name+owner.login }
 }
