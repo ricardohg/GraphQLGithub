@@ -25,7 +25,13 @@ struct Repository: Decodable {
     let owner: Owner
 }
 
+
 struct Owner: Decodable {
     let login: String
     let avatarUrl: URL
+}
+
+
+extension Repository: Identifiable {
+    var id: String { return name }
 }

@@ -12,9 +12,7 @@ struct ContentView: View {
     var body: some View {
         Text("Hello, world")
             .padding()
-            .onAppear {
-                self.remote.searchForGraphQLRepositories(with: 10, endCursor: nil)
-            }
+         
     }
 }
 

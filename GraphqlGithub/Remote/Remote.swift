@@ -14,6 +14,11 @@ class Remote: ObservableObject {
     private let graphQLURL = URL(string: "https://api.github.com/graphql")!
     
     @Published var repositories: Result<[Repository], Error>? = nil
+    var hasNextPage = true
+    var endCursor: String?
+    
+    private var tempRepositories = [Repository]()
+    
     private var cancellable: AnyCancellable?
     
     func searchForGraphQLRepositories(with pageSize: Int, endCursor: String?) {
@@ -45,7 +50,11 @@ class Remote: ObservableObject {
                 self.repositories = .success([])
                 return
             }
-            self.repositories = .success(repositories)
+            self.endCursor = search.object?.pageInfo.endCursor
+            self.hasNextPage = search.object?.pageInfo.hasNextPage ?? false
+            
+            self.tempRepositories.append(contentsOf: repositories)
+            self.repositories = .success(self.tempRepositories)
         })
         
     }
