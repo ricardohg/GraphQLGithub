@@ -16,7 +16,7 @@ struct ContentView: View {
             }.tabItem {
                 Image(systemName: "externaldrive.badge.icloud")
                 Text("GraphQL Repositories")
-            }
+            }.navigationViewStyle(StackNavigationViewStyle())
             
             NavigationView {
                 RepositoryListView()
@@ -24,7 +24,7 @@ struct ContentView: View {
             }.tabItem {
                 Image(systemName: "heart")
                 Text("Favorites")
-            }
+            }.navigationViewStyle(StackNavigationViewStyle())
             
             
         }

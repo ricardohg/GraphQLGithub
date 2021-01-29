@@ -35,7 +35,7 @@ struct RepositoryItemView: View {
                 Divider()
                 HStack {
                     Image(systemName: "star").foregroundColor(.gray)
-                    Text("\(repositoryItem.stargazerCount)").foregroundColor(.gray)
+                    Text("\(repositoryItem.formatedStargazerCount)").foregroundColor(.gray)
                 }
                 Spacer()
                 Image(uiImage: image)

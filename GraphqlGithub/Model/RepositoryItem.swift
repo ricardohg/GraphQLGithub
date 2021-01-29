@@ -15,3 +15,20 @@ struct RepositoryItem {
     let avatarURL: URL
     let url: URL
 }
+
+extension RepositoryItem {
+    
+    /// formatted just for K-order Values
+    var formatedStargazerCount: String {
+        guard stargazerCount >= 1000 else {
+            return "\(stargazerCount)"
+        }
+        let formatter = NumberFormatter()
+        formatter.positiveFormat = "0K"
+        formatter.multiplier = 0.001
+        return formatter.string(from: NSNumber(value: stargazerCount)) ?? "\(stargazerCount)"
+    }
+}
+
+
+

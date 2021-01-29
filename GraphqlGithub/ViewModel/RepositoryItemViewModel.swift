@@ -25,7 +25,14 @@ class RepositoryItemViewModel: ObservableObject {
     
     func loadImage(for imageURL: URL) {
         
-       cancellable =  URLSession.shared.dataTaskPublisher(for: imageURL)
+        // get 100px image size
+        let queryItem = [URLQueryItem(name: "s", value: "100")]
+        var urlComponent = URLComponents(string: imageURL.absoluteString)
+        urlComponent?.queryItems = queryItem
+        
+        guard let url = urlComponent?.url else { return }
+        
+       cancellable =  URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
         .receive(on: DispatchQueue.main)
         .catch({ error -> AnyPublisher<Data, Never> in
