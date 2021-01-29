@@ -9,51 +9,36 @@ import SwiftUI
 
 struct RepositoryListView: View {
     
-    @StateObject var viewModel = RepositoryListViewModel()
+    @StateObject private var viewModel = RepositoryListViewModel()
     
     private let pageSize = 25
     
     var body: some View {
-        if let repositories = viewModel.repositories {
-            
-            switch repositories {
-            case .success(let repositories):
-                
-                List {
-                    Section(footer:
-                                Group {
-                                    if viewModel.hasNextPage {
-                                        ProgressView()
-                                            .onAppear {
-                                                self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: viewModel.endCursor)
-                                            }
+        
+        List {
+            Section(footer:
+                        Group {
+                            if viewModel.hasNextPage {
+                                ProgressView()
+                                    .onAppear {
+                                        self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: viewModel.endCursor)
                                     }
-                                }
-                    ) {
-                        
-                        ForEach(repositories) { repository in
-                            
-                            NavigationLink(destination: Webview(url: repository.itemModel.url)) {
-                                RepositoryItemView(repositoryItem: repository.itemModel)
                             }
-                            
-                            
                         }
-                        
+            ) {
+                
+                ForEach(viewModel.repositories) { repository in
+                    
+                    NavigationLink(destination: Webview(url: repository.itemModel.url)) {
+                        RepositoryItemView(repositoryItem: repository.itemModel)
                     }
                 }
                 
-            case .failure(let error):
-                Text(error.localizedDescription)
             }
-            
-            
-        }
-        else {
-            ProgressView()
-                .onAppear {
-                    self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: nil)
-                }
+        }.alert(item: self.$viewModel.networkError) { error in
+            Alert(title: Text(NSLocalizedString("error", comment: "")), message: Text(error.localizedDescription), dismissButton: .default(Text("Retry")) {
+                self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: viewModel.endCursor)
+            })
         }
     }
 }

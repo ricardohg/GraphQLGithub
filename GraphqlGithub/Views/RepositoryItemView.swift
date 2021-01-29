@@ -47,16 +47,8 @@ struct RepositoryItemView: View {
                     .onTapGesture {
                         self.heartImage = self.heartImage == "heart" ? "heart.fill" : "heart"
                     }
-//                Button(action: {
-//                    print("button pressed")
-//                }) {
-//                    Image(systemName: "heart")
-//                        .resizable()
-//                        .frame(width: 35, height: 35, alignment: .center)
-//                }
                 
                 Divider()
-
                 Image(uiImage: image)
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
