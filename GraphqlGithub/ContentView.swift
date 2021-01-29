@@ -13,18 +13,22 @@ struct ContentView: View {
         TabView {
             NavigationView {
                 RepositoryListView()
+                    .navigationTitle(NSLocalizedString("repository.graphql", comment: ""))
             }.tabItem {
                 Image(systemName: "externaldrive.badge.icloud")
-                Text("GraphQL Repositories")
-            }.navigationViewStyle(StackNavigationViewStyle())
+                Text(NSLocalizedString("repository.graphql", comment: ""))
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
             
             NavigationView {
                 RepositoryListView()
+                    .navigationTitle(NSLocalizedString("favorites", comment: ""))
                    
             }.tabItem {
                 Image(systemName: "heart")
-                Text("Favorites")
-            }.navigationViewStyle(StackNavigationViewStyle())
+                Text(NSLocalizedString("favorites", comment: ""))
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
             
             
         }

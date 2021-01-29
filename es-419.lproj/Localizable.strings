@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  GraphqlGithub
+
+  Created by ricardo hernandez  on 28/01/21.
+  
+*/
+
+"repository.graphql" = "Repositorios GraphQL";
+"favorites" = "Favoritos";
