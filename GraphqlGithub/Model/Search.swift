@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Models to represent Search Object returned from Github's GraphQL request
+
 struct Search: Decodable {
     let repositoryCount: Int
     let nodes: [Repository]
@@ -24,25 +26,16 @@ struct Repository: Decodable {
     let name: String
     let stargazerCount: Int
     let owner: Owner
+    let url: URL
     
     var itemModel: RepositoryItem {
-        return RepositoryItem(name: name, login: owner.login, stargazerCount: stargazerCount, avatarURL: owner.avatarUrl)
+        return RepositoryItem(name: name, login: owner.login, stargazerCount: stargazerCount, avatarURL: owner.avatarUrl, url: url)
     }
 }
-
 
 struct Owner: Decodable {
     let login: String
     let avatarUrl: URL
-}
-
-
-/// Model to populate Items in List View
-struct RepositoryItem {
-    let name: String
-    let login: String
-    let stargazerCount: Int
-    let avatarURL: URL
 }
 
 extension Repository: Identifiable {

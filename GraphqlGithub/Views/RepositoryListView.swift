@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SafariServices
 
 struct RepositoryListView: View {
     
@@ -33,7 +34,10 @@ struct RepositoryListView: View {
                         
                         ForEach(repositories) { repository in
                             
-                            RepositoryItemView(repositoryItem: repository.itemModel)
+                            NavigationLink(destination: Webview(url: repository.itemModel.url)) {
+                                RepositoryItemView(repositoryItem: repository.itemModel)
+                            }
+                            
                             
                         }
                         
@@ -54,3 +58,4 @@ struct RepositoryListView: View {
         }
     }
 }
+

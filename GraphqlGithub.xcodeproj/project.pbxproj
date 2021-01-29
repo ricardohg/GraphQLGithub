@@ -16,6 +16,8 @@
 		B911F3A825C1AD5A0082AE36 /* GraphqlGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3A725C1AD5A0082AE36 /* GraphqlGithubTests.swift */; };
 		B911F3B325C1AD5A0082AE36 /* GraphqlGithubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */; };
 		B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3C425C1BB200082AE36 /* RepositoryListView.swift */; };
+		B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */; };
+		B932B3F325C38A63004CBC17 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3F225C38A63004CBC17 /* WebView.swift */; };
 		B9EB25CF25C1F74B0025D162 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */; };
 		B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F186FC25C1F8CC00C07410 /* Search.swift */; };
 		B9F1870325C1FB3F00C07410 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */; };
@@ -54,6 +56,8 @@
 		B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlGithubUITests.swift; sourceTree = "<group>"; };
 		B911F3B425C1AD5A0082AE36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B911F3C425C1BB200082AE36 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
+		B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
+		B932B3F225C38A63004CBC17 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		B9F186FC25C1F8CC00C07410 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLOperation.swift; sourceTree = "<group>"; };
@@ -151,6 +155,7 @@
 			children = (
 				B911F3C425C1BB200082AE36 /* RepositoryListView.swift */,
 				B90A5BD225C3213E005609CA /* RepositoryItemView.swift */,
+				B932B3F225C38A63004CBC17 /* WebView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F186FC25C1F8CC00C07410 /* Search.swift */,
+				B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,9 +316,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */,
+				B932B3F325C38A63004CBC17 /* WebView.swift in Sources */,
 				B9F1870325C1FB3F00C07410 /* GraphQLOperation.swift in Sources */,
 				B911F39825C1AD5A0082AE36 /* ContentView.swift in Sources */,
 				B90A5BDF25C3223B005609CA /* RepositoryItemViewModel.swift in Sources */,
+				B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */,
 				B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */,
 				B90A5BD325C3213E005609CA /* RepositoryItemView.swift in Sources */,
 				B911F39625C1AD5A0082AE36 /* GraphqlGithubApp.swift in Sources */,

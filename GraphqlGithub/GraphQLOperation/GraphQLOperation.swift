@@ -92,6 +92,7 @@ extension GraphQLOperation where Input == PaginationInput, Output == Search {
                   nodes {
                     ... on Repository {
                       name
+                      url
                         stargazerCount
                         owner {
                           login
