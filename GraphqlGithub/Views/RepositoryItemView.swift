@@ -9,8 +9,7 @@ import SwiftUI
 
 struct RepositoryItemView: View {
     
-    var repositoryItem: RepositoryItem
-    @ObservedObject var viewModel = RepositoryItemViewModel()
+    @ObservedObject var viewModel: RepositoryItemViewModel 
     
     @State var heartImage = "heart"
     
@@ -20,7 +19,7 @@ struct RepositoryItemView: View {
         let imageData = viewModel.imageData
         
         // Load Image from cache if any, if not load Placeholder
-        if let data = viewModel.loadImageFromCache(for: repositoryItem.avatarURL) {
+        if let data = viewModel.loadImageFromCache() {
             image = UIImage(data: data)
         }
         else {
@@ -31,13 +30,13 @@ struct RepositoryItemView: View {
             
             HStack {
                 VStack {
-                    Text(repositoryItem.name)
-                    Text(repositoryItem.login).foregroundColor(.gray)
+                    Text(viewModel.item.name)
+                    Text(viewModel.item.login).foregroundColor(.gray)
                 }
                 Divider()
                 HStack {
                     Image(systemName: "star").foregroundColor(.gray)
-                    Text("\(repositoryItem.formatedStargazerCount)").foregroundColor(.gray)
+                    Text("\(viewModel.item.formatedStargazerCount)").foregroundColor(.gray)
                 }
                 Spacer()
               
@@ -55,7 +54,7 @@ struct RepositoryItemView: View {
                     .aspectRatio(contentMode: .fit)
                     .onAppear {
                         if imageData == nil {
-                            self.viewModel.loadImage(for: repositoryItem.avatarURL)
+                            self.viewModel.loadImage()
                         }
                     }
 

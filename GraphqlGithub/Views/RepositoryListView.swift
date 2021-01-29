@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RepositoryListView: View {
     
-    @StateObject private var viewModel = RepositoryListViewModel()
+    @StateObject private var viewModel = RepositoryListViewModel(with: "error")
     
     private let pageSize = 25
     
@@ -30,13 +30,13 @@ struct RepositoryListView: View {
                 ForEach(viewModel.repositories) { repository in
                     
                     NavigationLink(destination: Webview(url: repository.itemModel.url)) {
-                        RepositoryItemView(repositoryItem: repository.itemModel)
+                        RepositoryItemView(viewModel: RepositoryItemViewModel(with: repository.itemModel))
                     }
                 }
                 
             }
         }.alert(item: self.$viewModel.networkError) { error in
-            Alert(title: Text(NSLocalizedString("error", comment: "")), message: Text(error.localizedDescription), dismissButton: .default(Text("Retry")) {
+            Alert(title: Text(viewModel.errorString), message: Text(error.localizedDescription), dismissButton: .default(Text("Retry")) {
                 self.viewModel.searchForGraphQLRepositories(with: self.pageSize, endCursor: viewModel.endCursor)
             })
         }

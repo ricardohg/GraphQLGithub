@@ -16,6 +16,8 @@
 		B911F3A825C1AD5A0082AE36 /* GraphqlGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3A725C1AD5A0082AE36 /* GraphqlGithubTests.swift */; };
 		B911F3B325C1AD5A0082AE36 /* GraphqlGithubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */; };
 		B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3C425C1BB200082AE36 /* RepositoryListView.swift */; };
+		B919CCDD25C4767900BB7993 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919CCDC25C4767900BB7993 /* Localizable.swift */; };
+		B919CCE525C479BF00BB7993 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919CCE425C479BF00BB7993 /* ContentViewModel.swift */; };
 		B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */; };
 		B932B3F325C38A63004CBC17 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3F225C38A63004CBC17 /* WebView.swift */; };
 		B932B40225C39D1A004CBC17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B932B40425C39D1A004CBC17 /* Localizable.strings */; };
@@ -57,6 +59,8 @@
 		B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlGithubUITests.swift; sourceTree = "<group>"; };
 		B911F3B425C1AD5A0082AE36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B911F3C425C1BB200082AE36 /* RepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListView.swift; sourceTree = "<group>"; };
+		B919CCDC25C4767900BB7993 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		B919CCE425C479BF00BB7993 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItem.swift; sourceTree = "<group>"; };
 		B932B3F225C38A63004CBC17 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B932B40325C39D1A004CBC17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -115,12 +119,12 @@
 		B911F39425C1AD5A0082AE36 /* GraphqlGithub */ = {
 			isa = PBXGroup;
 			children = (
+				B919CCDB25C475FE00BB7993 /* PropertyWrappers */,
 				B9F1870125C1FB2700C07410 /* GraphQLOperation */,
 				B9EB25D325C1F7CA0025D162 /* Model */,
 				B9EB25CD25C1F6F00025D162 /* ViewModel */,
 				B911F3C325C1BAFB0082AE36 /* Views */,
 				B911F39525C1AD5A0082AE36 /* GraphqlGithubApp.swift */,
-				B911F39725C1AD5A0082AE36 /* ContentView.swift */,
 				B911F39925C1AD5A0082AE36 /* Assets.xcassets */,
 				B911F39E25C1AD5A0082AE36 /* Info.plist */,
 				B911F39B25C1AD5A0082AE36 /* Preview Content */,
@@ -160,8 +164,17 @@
 				B911F3C425C1BB200082AE36 /* RepositoryListView.swift */,
 				B90A5BD225C3213E005609CA /* RepositoryItemView.swift */,
 				B932B3F225C38A63004CBC17 /* WebView.swift */,
+				B911F39725C1AD5A0082AE36 /* ContentView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B919CCDB25C475FE00BB7993 /* PropertyWrappers */ = {
+			isa = PBXGroup;
+			children = (
+				B919CCDC25C4767900BB7993 /* Localizable.swift */,
+			);
+			path = PropertyWrappers;
 			sourceTree = "<group>";
 		};
 		B9EB25CD25C1F6F00025D162 /* ViewModel */ = {
@@ -169,6 +182,7 @@
 			children = (
 				B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */,
 				B90A5BDE25C3223B005609CA /* RepositoryItemViewModel.swift */,
+				B919CCE425C479BF00BB7993 /* ContentViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -321,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B919CCDD25C4767900BB7993 /* Localizable.swift in Sources */,
 				B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */,
 				B932B3F325C38A63004CBC17 /* WebView.swift in Sources */,
 				B9F1870325C1FB3F00C07410 /* GraphQLOperation.swift in Sources */,
@@ -328,6 +343,7 @@
 				B90A5BDF25C3223B005609CA /* RepositoryItemViewModel.swift in Sources */,
 				B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */,
 				B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */,
+				B919CCE525C479BF00BB7993 /* ContentViewModel.swift in Sources */,
 				B90A5BD325C3213E005609CA /* RepositoryItemView.swift in Sources */,
 				B911F39625C1AD5A0082AE36 /* GraphqlGithubApp.swift in Sources */,
 				B9EB25CF25C1F74B0025D162 /* RepositoryListViewModel.swift in Sources */,

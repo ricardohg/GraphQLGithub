@@ -16,12 +16,18 @@ class RepositoryListViewModel: ObservableObject {
     @Published var repositories: [Repository] = []
     @Published var networkError: NetworkError?
     
+    @Localizable var errorString: String
+    
     var hasNextPage = true
     var endCursor: String?
     
     private var tempRepositories = [Repository]()
     
     private var cancellable: AnyCancellable?
+    
+    init(with errorString: String) {
+        self.errorString = errorString
+    }
     
     func searchForGraphQLRepositories(with pageSize: Int, endCursor: String?) {
         

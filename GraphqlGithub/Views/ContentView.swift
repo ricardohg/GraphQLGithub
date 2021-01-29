@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-
+    
+    let viewModel = ContentViewModel(repositoryTitle: "repository.graphql", favoriteTitle: "favorites")
+    
     var body: some View {
         TabView {
             NavigationView {
                 RepositoryListView()
-                    .navigationTitle(NSLocalizedString("repository.graphql", comment: ""))
+                    .navigationTitle(viewModel.repositoryTitle)
             }.tabItem {
                 Image(systemName: "externaldrive.badge.icloud")
-                Text(NSLocalizedString("repository.graphql", comment: ""))
+                Text(viewModel.repositoryTitle)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             
             NavigationView {
                 RepositoryListView()
-                    .navigationTitle(NSLocalizedString("favorites", comment: ""))
+                    .navigationTitle(viewModel.favoriteTitle)
                    
             }.tabItem {
                 Image(systemName: "heart")
-                Text(NSLocalizedString("favorites", comment: ""))
+                Text(viewModel.favoriteTitle)
             }
             .navigationViewStyle(StackNavigationViewStyle())
             
