@@ -12,6 +12,8 @@ struct RepositoryItemView: View {
     var repositoryItem: RepositoryItem
     @ObservedObject var viewModel = RepositoryItemViewModel()
     
+    @State var heartImage = "heart"
+    
     var body: some View {
         
         var image: UIImage!
@@ -38,6 +40,23 @@ struct RepositoryItemView: View {
                     Text("\(repositoryItem.formatedStargazerCount)").foregroundColor(.gray)
                 }
                 Spacer()
+              
+                Image(systemName: self.heartImage)
+                    .resizable()
+                    .frame(width: 35, height: 35, alignment: .center)
+                    .onTapGesture {
+                        self.heartImage = self.heartImage == "heart" ? "heart.fill" : "heart"
+                    }
+//                Button(action: {
+//                    print("button pressed")
+//                }) {
+//                    Image(systemName: "heart")
+//                        .resizable()
+//                        .frame(width: 35, height: 35, alignment: .center)
+//                }
+                
+                Divider()
+
                 Image(uiImage: image)
                     .resizable()
                     .frame(width: 50, height: 50, alignment: .center)
