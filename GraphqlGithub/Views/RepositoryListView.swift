@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SafariServices
 
 struct RepositoryListView: View {
     
