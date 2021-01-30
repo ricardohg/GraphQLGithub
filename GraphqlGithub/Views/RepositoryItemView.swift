@@ -9,14 +9,13 @@ import SwiftUI
 
 struct RepositoryItemView: View {
     
-    @ObservedObject var viewModel: RepositoryItemViewModel 
-    
-    @State var heartImage = "heart"
+    @ObservedObject var viewModel: RepositoryItemViewModel
     
     var body: some View {
         
         var image: UIImage!
         let imageData = viewModel.imageData
+        let isFavorite = viewModel.favoritesViewModel.isFavorite(item: viewModel.item)
         
         // Load Image from cache if any, if not load Placeholder
         if let data = viewModel.loadImageFromCache() {
@@ -39,13 +38,24 @@ struct RepositoryItemView: View {
                     Text("\(viewModel.item.formatedStargazerCount)").foregroundColor(.gray)
                 }
                 Spacer()
-              
-                Image(systemName: self.viewModel.favoritesViewModel.isFavorite(item: viewModel.item) ? "heart.fill" : "heart")
+                Image(systemName: isFavorite ? "heart.fill" : "heart")
                     .resizable()
                     .frame(width: 35, height: 35, alignment: .center)
                     .onTapGesture {
-                        self.viewModel.favoritesViewModel.addTo(favorites: viewModel.item)
-                        self.heartImage = self.viewModel.favoritesViewModel.isFavorite(item: viewModel.item) ? "heart.fill" : "heart"
+                        let impactMed = UIImpactFeedbackGenerator(style: .medium)
+                        impactMed.impactOccurred()
+                        if isFavorite {
+                            self.viewModel.isFavorite = false
+                            self.viewModel.favoritesViewModel.removeFrom(favorites: viewModel.item)
+                        }
+                        else {
+                            self.viewModel.isFavorite = true
+                            self.viewModel.favoritesViewModel.addTo(favorites: viewModel.item)
+                        }
+                        
+                       
+                    }.onAppear {
+                        self.viewModel.checkIfIsFavorite()
                     }
                 
                 Divider()

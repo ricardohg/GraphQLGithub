@@ -29,6 +29,7 @@ struct FavoritesRepositoryListView: View {
         }
         else {
             Text(viewModel.noFavoritesTitle)
+                .padding(20)
                 .foregroundColor(.gray)
                 .onAppear {
                     let _ = self.viewModel.loadFavorites()

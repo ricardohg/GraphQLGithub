@@ -15,6 +15,7 @@ class RepositoryItemViewModel: ObservableObject {
     @Published var imageData: Data?
     @Published var isFavorite = false
     
+    
     let item: RepositoryItem
     fileprivate let defaults: UserDefaults
     let favoritesViewModel: FavoritesRepositoryListViewModel
@@ -25,7 +26,6 @@ class RepositoryItemViewModel: ObservableObject {
         self.item = item
         self.favoritesViewModel = favoritesViewModel
         self.defaults = defaults
-        self.isFavorite = favoritesViewModel.isFavorite(item: item)
     }
     
     func loadImageFromCache() -> Data? {
@@ -33,6 +33,10 @@ class RepositoryItemViewModel: ObservableObject {
             return Data(imageFromCache)
         }
         return nil
+    }
+    
+    func checkIfIsFavorite() {
+        self.isFavorite = favoritesViewModel.isFavorite(item: item)
     }
     
     func loadImage() {
