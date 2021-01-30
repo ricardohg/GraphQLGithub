@@ -23,7 +23,7 @@ struct ContentView: View {
             .navigationViewStyle(StackNavigationViewStyle())
             
             NavigationView {
-                RepositoryListView()
+                FavoritesRepositoryListView()
                     .navigationTitle(viewModel.favoriteTitle)
                    
             }.tabItem {

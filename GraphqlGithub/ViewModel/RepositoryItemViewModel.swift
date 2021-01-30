@@ -13,13 +13,19 @@ let imageCache = NSCache<NSString, NSData>()
 class RepositoryItemViewModel: ObservableObject {
     
     @Published var imageData: Data?
+    @Published var isFavorite = false
     
     let item: RepositoryItem
+    fileprivate let defaults: UserDefaults
+    let favoritesViewModel: FavoritesRepositoryListViewModel
     
     private var cancellable: AnyCancellable?
     
-    init(with item: RepositoryItem) {
+    init(with item: RepositoryItem, favoritesViewModel: FavoritesRepositoryListViewModel, defaults: UserDefaults) {
         self.item = item
+        self.favoritesViewModel = favoritesViewModel
+        self.defaults = defaults
+        self.isFavorite = favoritesViewModel.isFavorite(item: item)
     }
     
     func loadImageFromCache() -> Data? {
@@ -38,18 +44,18 @@ class RepositoryItemViewModel: ObservableObject {
         
         guard let url = urlComponent?.url else { return }
         
-       cancellable =  URLSession.shared.dataTaskPublisher(for: url)
+        cancellable =  URLSession.shared.dataTaskPublisher(for: url)
             .map { $0.data }
-        .receive(on: DispatchQueue.main)
-        .catch({ error -> AnyPublisher<Data, Never> in
-            self.imageData = nil
-            print(error.localizedDescription)
-            return Empty(completeImmediately: true).eraseToAnyPublisher()
-        })
-        .sink(receiveValue: { data in
-            imageCache.setObject(NSData(data: data), forKey: self.item.avatarURL.absoluteString as NSString)
-            self.imageData = data
-        })
+            .receive(on: DispatchQueue.main)
+            .catch({ error -> AnyPublisher<Data, Never> in
+                self.imageData = nil
+                print(error.localizedDescription)
+                return Empty(completeImmediately: true).eraseToAnyPublisher()
+            })
+            .sink(receiveValue: { data in
+                imageCache.setObject(NSData(data: data), forKey: self.item.avatarURL.absoluteString as NSString)
+                self.imageData = data
+            })
     }
 }
 

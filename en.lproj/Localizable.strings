@@ -8,4 +8,5 @@
 
 "repository.graphql" = "GraphQL Repositories";
 "favorites" = "Favorites";
-"error" = "Something Went Wrong..";
+"error" = "Something went wrong..";
+"no.favorites" = "You don't have any GraphQL repository as favorite yet. To add one please tap the ♡";

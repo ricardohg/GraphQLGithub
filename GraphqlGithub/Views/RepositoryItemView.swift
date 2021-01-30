@@ -40,11 +40,12 @@ struct RepositoryItemView: View {
                 }
                 Spacer()
               
-                Image(systemName: self.heartImage)
+                Image(systemName: self.viewModel.favoritesViewModel.isFavorite(item: viewModel.item) ? "heart.fill" : "heart")
                     .resizable()
                     .frame(width: 35, height: 35, alignment: .center)
                     .onTapGesture {
-                        self.heartImage = self.heartImage == "heart" ? "heart.fill" : "heart"
+                        self.viewModel.favoritesViewModel.addTo(favorites: viewModel.item)
+                        self.heartImage = self.viewModel.favoritesViewModel.isFavorite(item: viewModel.item) ? "heart.fill" : "heart"
                     }
                 
                 Divider()
@@ -57,7 +58,6 @@ struct RepositoryItemView: View {
                             self.viewModel.loadImage()
                         }
                     }
-
                 
             }
             

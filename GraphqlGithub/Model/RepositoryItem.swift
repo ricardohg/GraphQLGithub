@@ -15,6 +15,14 @@ struct RepositoryItem: Codable {
     let avatarURL: URL
     let url: URL
     
+    var key: String {
+        return name + login
+    }
+    
+}
+
+extension RepositoryItem: Identifiable {
+    var id: String { return name+login }
 }
 
 extension RepositoryItem {

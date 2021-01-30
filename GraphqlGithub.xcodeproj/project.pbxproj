@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B90A5BD325C3213E005609CA /* RepositoryItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A5BD225C3213E005609CA /* RepositoryItemView.swift */; };
 		B90A5BDF25C3223B005609CA /* RepositoryItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90A5BDE25C3223B005609CA /* RepositoryItemViewModel.swift */; };
+		B90C308525C48B2600AF9E14 /* FavoritesRepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C308425C48B2600AF9E14 /* FavoritesRepositoryListView.swift */; };
+		B90C308D25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90C308C25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift */; };
 		B911F39625C1AD5A0082AE36 /* GraphqlGithubApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F39525C1AD5A0082AE36 /* GraphqlGithubApp.swift */; };
 		B911F39825C1AD5A0082AE36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F39725C1AD5A0082AE36 /* ContentView.swift */; };
 		B911F39A25C1AD5A0082AE36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B911F39925C1AD5A0082AE36 /* Assets.xcassets */; };
@@ -46,6 +48,8 @@
 /* Begin PBXFileReference section */
 		B90A5BD225C3213E005609CA /* RepositoryItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItemView.swift; sourceTree = "<group>"; };
 		B90A5BDE25C3223B005609CA /* RepositoryItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryItemViewModel.swift; sourceTree = "<group>"; };
+		B90C308425C48B2600AF9E14 /* FavoritesRepositoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryListView.swift; sourceTree = "<group>"; };
+		B90C308C25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryListViewModel.swift; sourceTree = "<group>"; };
 		B911F39225C1AD5A0082AE36 /* GraphqlGithub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GraphqlGithub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B911F39525C1AD5A0082AE36 /* GraphqlGithubApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlGithubApp.swift; sourceTree = "<group>"; };
 		B911F39725C1AD5A0082AE36 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 				B90A5BD225C3213E005609CA /* RepositoryItemView.swift */,
 				B932B3F225C38A63004CBC17 /* WebView.swift */,
 				B911F39725C1AD5A0082AE36 /* ContentView.swift */,
+				B90C308425C48B2600AF9E14 /* FavoritesRepositoryListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 				B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */,
 				B90A5BDE25C3223B005609CA /* RepositoryItemViewModel.swift */,
 				B919CCE425C479BF00BB7993 /* ContentViewModel.swift */,
+				B90C308C25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -335,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B90C308525C48B2600AF9E14 /* FavoritesRepositoryListView.swift in Sources */,
 				B919CCDD25C4767900BB7993 /* Localizable.swift in Sources */,
 				B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */,
 				B932B3F325C38A63004CBC17 /* WebView.swift in Sources */,
@@ -342,6 +349,7 @@
 				B911F39825C1AD5A0082AE36 /* ContentView.swift in Sources */,
 				B90A5BDF25C3223B005609CA /* RepositoryItemViewModel.swift in Sources */,
 				B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */,
+				B90C308D25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift in Sources */,
 				B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */,
 				B919CCE525C479BF00BB7993 /* ContentViewModel.swift in Sources */,
 				B90A5BD325C3213E005609CA /* RepositoryItemView.swift in Sources */,

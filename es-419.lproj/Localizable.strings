@@ -9,3 +9,4 @@
 "repository.graphql" = "Repositorios GraphQL";
 "favorites" = "Favoritos";
 "error" = "Hay Un Problema..";
+"no.favorites" = "No tienes ningun repositorio GraphQL como favorito aun. Para añadir presiona el ♡";

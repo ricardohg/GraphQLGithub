@@ -25,7 +25,7 @@ class RepositoryListViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    init(with errorString: String) {
+    init(with errorString: String, defaults: UserDefaults) {
         self.errorString = errorString
     }
     
@@ -67,6 +67,7 @@ class RepositoryListViewModel: ObservableObject {
         })
         
     }
+    
 }
 
 enum NetworkError: LocalizedError, Identifiable {

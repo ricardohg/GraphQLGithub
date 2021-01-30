@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RepositoryListView: View {
     
-    @StateObject private var viewModel = RepositoryListViewModel(with: "error")
+    @StateObject private var viewModel = RepositoryListViewModel(with: "error", defaults: .standard)
     
     private let pageSize = 25
     
@@ -30,7 +30,7 @@ struct RepositoryListView: View {
                 ForEach(viewModel.repositories) { repository in
                     
                     NavigationLink(destination: Webview(url: repository.itemModel.url)) {
-                        RepositoryItemView(viewModel: RepositoryItemViewModel(with: repository.itemModel))
+                        RepositoryItemView(viewModel: RepositoryItemViewModel(with: repository.itemModel, favoritesViewModel: FavoritesRepositoryListViewModel(defaults: .standard, noFavoritesTitle: "no.favorites"), defaults: .standard))
                     }
                 }
                 
