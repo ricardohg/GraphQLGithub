@@ -15,7 +15,7 @@ struct FavoritesRepositoryListView: View {
         
         if viewModel.favorites.count > 0 {
             List {
-                ForEach (viewModel.favorites) { favorite in
+                ForEach (Array(viewModel.favorites.values)) { favorite in
                     
                     NavigationLink(destination: Webview(url: favorite.url)) {
                         RepositoryItemView(viewModel: RepositoryItemViewModel(with: favorite, favoritesViewModel: viewModel, defaults: .standard))

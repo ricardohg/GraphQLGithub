@@ -9,19 +9,21 @@ import Foundation
 
 class FavoritesRepositoryListViewModel: ObservableObject {
     
-    @Published var favorites: [RepositoryItem] = []
+    typealias FavoritesDirectory = [String: RepositoryItem]
+    
+    @Published var favorites = FavoritesDirectory()
 
     private let defaults: UserDefaults
     @Localizable var noFavoritesTitle: String
     
-    private var currentFavorites: [RepositoryItem] {
+    private var currentFavorites: FavoritesDirectory {
         let decoder = JSONDecoder()
         if let object = defaults.object(forKey: "favorites") as? Data {
-            if let favorites = try? decoder.decode([RepositoryItem].self, from: object) {
+            if let favorites = try? decoder.decode(FavoritesDirectory.self, from: object) {
                 return favorites
             }
         }
-        return []
+        return FavoritesDirectory()
     }
     
     init(defaults: UserDefaults, noFavoritesTitle: String) {
@@ -31,7 +33,10 @@ class FavoritesRepositoryListViewModel: ObservableObject {
     
     func isFavorite(item: RepositoryItem) -> Bool {
         let favorites = currentFavorites
-        return favorites.filter { $0.key == item.key }.count > 0
+        if let _ = favorites[item.key] {
+            return true
+        }
+        return false
     }
     
 
@@ -44,10 +49,23 @@ class FavoritesRepositoryListViewModel: ObservableObject {
     func addTo(favorites item: RepositoryItem) {
         let encoder = JSONEncoder()
         var favorites = currentFavorites
-        favorites.append(item)
+        favorites[item.key] = item
         if let encoded = try? encoder.encode(favorites) {
             defaults.setValue(encoded, forKey: "favorites")
         }
+    }
+    
+    func removeFrom(favorites item: RepositoryItem) {
+        
+        let encoder = JSONEncoder()
+        var favorites = currentFavorites
+        favorites.removeValue(forKey: item.key)
+        
+        if let encoded = try? encoder.encode(favorites) {
+            defaults.setValue(encoded, forKey: "favorites")
+        }
+        
+        self.favorites = currentFavorites
     }
     
 }
