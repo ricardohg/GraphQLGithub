@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RepositoryListView: View {
     
-    @StateObject private var viewModel = RepositoryListViewModel(with: "error", defaults: .standard)
+    @StateObject private var viewModel = RepositoryListViewModel(with: "error", defaults: .standard, provider: URLSession.shared)
     
     private let pageSize = 25
     

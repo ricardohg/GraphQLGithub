@@ -18,6 +18,8 @@ class RepositoryListViewModel: ObservableObject {
     
     @Localizable var errorString: String
     
+    let provider: GraphQLProvider
+    
     var hasNextPage = true
     var endCursor: String?
     
@@ -25,8 +27,9 @@ class RepositoryListViewModel: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
-    init(with errorString: String, defaults: UserDefaults) {
+    init(with errorString: String, defaults: UserDefaults, provider: GraphQLProvider) {
         self.errorString = errorString
+        self.provider = provider
     }
     
     func searchForGraphQLRepositories(with pageSize: Int, endCursor: String?) {
@@ -44,27 +47,29 @@ class RepositoryListViewModel: ObservableObject {
             return
         }
         
-       cancellable = URLSession.shared.dataTaskPublisher(for: request)
+        let dataTask = provider.apiResponse(for: request)
+        
+        cancellable = dataTask
             .map { $0.data }
             .decode(type: GraphQLResult<Search>.self, decoder: decoder)
             .receive(on: DispatchQueue.main)
-        .catch({ (error) -> AnyPublisher<GraphQLResult<Search>, Never> in
-            self.networkError = .underlyingError(error)
-            return Empty(completeImmediately: true).eraseToAnyPublisher()
-        })
-        .sink(receiveValue: { search in
-    
-            guard let repositories = search.object?.nodes else {
-                self.repositories = []
-                return
-            }
-            self.networkError = nil
-            self.endCursor = search.object?.pageInfo.endCursor
-            self.hasNextPage = search.object?.pageInfo.hasNextPage ?? false
-            
-            self.tempRepositories.append(contentsOf: repositories)
-            self.repositories = self.tempRepositories
-        })
+            .catch({ (error) -> AnyPublisher<GraphQLResult<Search>, Never> in
+                self.networkError = .underlyingError(error)
+                return Empty(completeImmediately: true).eraseToAnyPublisher()
+            })
+            .sink(receiveValue: { search in
+                
+                guard let repositories = search.object?.nodes else {
+                    self.repositories = []
+                    return
+                }
+                self.networkError = nil
+                self.endCursor = search.object?.pageInfo.endCursor
+                self.hasNextPage = search.object?.pageInfo.hasNextPage ?? false
+                
+                self.tempRepositories.append(contentsOf: repositories)
+                self.repositories = self.tempRepositories
+            })
         
     }
     
@@ -75,9 +80,9 @@ enum NetworkError: LocalizedError, Identifiable {
     case serverError(responseCode: Int)
     case underlyingError(Error)
     case unknown
-
+    
     var id: String { localizedDescription }
-
+    
     var errorDescription: String? {
         switch self {
         case .notFound: return "Not found"
