@@ -1,0 +1,238 @@
+{
+  "data": {
+    "search": {
+      "repositoryCount": 97003,
+      "pageInfo": {
+        "hasNextPage": true,
+        "endCursor": "Y3Vyc29yOjI1"
+      },
+      "nodes": [
+        {
+          "name": "graphql",
+          "url": "https://github.com/graphql-go/graphql",
+          "stargazerCount": 7286,
+          "owner": {
+            "login": "graphql-go",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/14210643?v=4"
+          }
+        },
+        {
+          "name": "graphql.github.io",
+          "url": "https://github.com/graphql/graphql.github.io",
+          "stargazerCount": 607,
+          "owner": {
+            "login": "graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/12972006?v=4"
+          }
+        },
+        {
+          "name": "graphql-engine",
+          "url": "https://github.com/hasura/graphql-engine",
+          "stargazerCount": 20076,
+          "owner": {
+            "login": "hasura",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/13966722?v=4"
+          }
+        },
+        {
+          "name": "graphql-js",
+          "url": "https://github.com/graphql/graphql-js",
+          "stargazerCount": 17186,
+          "owner": {
+            "login": "graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/12972006?v=4"
+          }
+        },
+        {
+          "name": "graphql",
+          "url": "https://github.com/nestjs/graphql",
+          "stargazerCount": 650,
+          "owner": {
+            "login": "nestjs",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/28507035?v=4"
+          }
+        },
+        {
+          "name": "graphql",
+          "url": "https://github.com/machinebox/graphql",
+          "stargazerCount": 657,
+          "owner": {
+            "login": "machinebox",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/25792946?v=4"
+          }
+        },
+        {
+          "name": "awesome-graphql",
+          "url": "https://github.com/chentsulin/awesome-graphql",
+          "stargazerCount": 12322,
+          "owner": {
+            "login": "chentsulin",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/3382565?u=536713f6c30e718b10509f649e3ffa0585f911fe&v=4"
+          }
+        },
+        {
+          "name": "graphql-spec",
+          "url": "https://github.com/graphql/graphql-spec",
+          "stargazerCount": 13125,
+          "owner": {
+            "login": "graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/12972006?v=4"
+          }
+        },
+        {
+          "name": "graphql",
+          "url": "https://github.com/drupal-graphql/graphql",
+          "stargazerCount": 260,
+          "owner": {
+            "login": "drupal-graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/32874999?v=4"
+          }
+        },
+        {
+          "name": "GraphQL",
+          "url": "https://github.com/youshido-php/GraphQL",
+          "stargazerCount": 718,
+          "owner": {
+            "login": "youshido-php",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/5954642?v=4"
+          }
+        },
+        {
+          "name": "graphql",
+          "url": "https://github.com/shurcooL/graphql",
+          "stargazerCount": 442,
+          "owner": {
+            "login": "shurcooL",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/41136041?v=4"
+          }
+        },
+        {
+          "name": "graphql-ruby",
+          "url": "https://github.com/rmosolgo/graphql-ruby",
+          "stargazerCount": 4578,
+          "owner": {
+            "login": "rmosolgo",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/2231765?u=f440b90427dd354e5e689683e36b5bf812c8791a&v=4"
+          }
+        },
+        {
+          "name": "graphql-java",
+          "url": "https://github.com/graphql-java/graphql-java",
+          "stargazerCount": 4713,
+          "owner": {
+            "login": "graphql-java",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/14289921?v=4"
+          }
+        },
+        {
+          "name": "apollo-client",
+          "url": "https://github.com/apollographql/apollo-client",
+          "stargazerCount": 15502,
+          "owner": {
+            "login": "apollographql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/17189275?v=4"
+          }
+        },
+        {
+          "name": "graphql-dotnet",
+          "url": "https://github.com/graphql-dotnet/graphql-dotnet",
+          "stargazerCount": 4594,
+          "owner": {
+            "login": "graphql-dotnet",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/13958777?v=4"
+          }
+        },
+        {
+          "name": "graphene",
+          "url": "https://github.com/graphql-python/graphene",
+          "stargazerCount": 6293,
+          "owner": {
+            "login": "graphql-python",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/15002022?v=4"
+          }
+        },
+        {
+          "name": "graphql-playground",
+          "url": "https://github.com/graphql/graphql-playground",
+          "stargazerCount": 6857,
+          "owner": {
+            "login": "graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/12972006?v=4"
+          }
+        },
+        {
+          "name": "GraphQL",
+          "url": "https://github.com/GraphQLSwift/GraphQL",
+          "stargazerCount": 807,
+          "owner": {
+            "login": "GraphQLSwift",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/22902791?v=4"
+          }
+        },
+        {
+          "name": "express-graphql",
+          "url": "https://github.com/graphql/express-graphql",
+          "stargazerCount": 5739,
+          "owner": {
+            "login": "graphql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/12972006?v=4"
+          }
+        },
+        {
+          "name": "howtographql",
+          "url": "https://github.com/howtographql/howtographql",
+          "stargazerCount": 7351,
+          "owner": {
+            "login": "howtographql",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/29239447?v=4"
+          }
+        },
+        {
+          "name": "graphql-tools",
+          "url": "https://github.com/ardatan/graphql-tools",
+          "stargazerCount": 3882,
+          "owner": {
+            "login": "ardatan",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/20847995?u=a59be88dc0142b64204f271c811bec609ea36439&v=4"
+          }
+        },
+        {
+          "name": "type-graphql",
+          "url": "https://github.com/MichalLytek/type-graphql",
+          "stargazerCount": 5829,
+          "owner": {
+            "login": "MichalLytek",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/10618781?u=2800e54d15ad79a12b24829f5d84ad6ff26cb655&v=4"
+          }
+        },
+        {
+          "name": "graphql",
+          "url": "https://github.com/graphql-elixir/graphql",
+          "stargazerCount": 854,
+          "owner": {
+            "login": "graphql-elixir",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/16552595?v=4"
+          }
+        },
+        {
+          "name": "graphql-yoga",
+          "url": "https://github.com/prisma-labs/graphql-yoga",
+          "stargazerCount": 6266,
+          "owner": {
+            "login": "prisma-labs",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/55085183?v=4"
+          }
+        },
+        {
+          "name": "graphql-php",
+          "url": "https://github.com/webonyx/graphql-php",
+          "stargazerCount": 3932,
+          "owner": {
+            "login": "webonyx",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/10217474?v=4"
+          }
+        }
+      ]
+    }
+  }
+}

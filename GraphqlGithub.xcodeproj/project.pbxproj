@@ -15,7 +15,6 @@
 		B911F39825C1AD5A0082AE36 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F39725C1AD5A0082AE36 /* ContentView.swift */; };
 		B911F39A25C1AD5A0082AE36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B911F39925C1AD5A0082AE36 /* Assets.xcassets */; };
 		B911F39D25C1AD5A0082AE36 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B911F39C25C1AD5A0082AE36 /* Preview Assets.xcassets */; };
-		B911F3A825C1AD5A0082AE36 /* GraphqlGithubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3A725C1AD5A0082AE36 /* GraphqlGithubTests.swift */; };
 		B911F3B325C1AD5A0082AE36 /* GraphqlGithubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */; };
 		B911F3C525C1BB200082AE36 /* RepositoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B911F3C425C1BB200082AE36 /* RepositoryListView.swift */; };
 		B919CCDD25C4767900BB7993 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B919CCDC25C4767900BB7993 /* Localizable.swift */; };
@@ -23,6 +22,10 @@
 		B932B3EE25C3608F004CBC17 /* RepositoryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3ED25C3608F004CBC17 /* RepositoryItem.swift */; };
 		B932B3F325C38A63004CBC17 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B932B3F225C38A63004CBC17 /* WebView.swift */; };
 		B932B40225C39D1A004CBC17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B932B40425C39D1A004CBC17 /* Localizable.strings */; };
+		B9431DFF25C6FE7E00B9E24F /* search.json in Resources */ = {isa = PBXBuildFile; fileRef = B9431DFE25C6FE7E00B9E24F /* search.json */; };
+		B9431E0725C6FF5A00B9E24F /* MockJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E0625C6FF5A00B9E24F /* MockJSON.swift */; };
+		B9431E1025C702BC00B9E24F /* FavoritesRepositoryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E0F25C702BC00B9E24F /* FavoritesRepositoryListViewModelTests.swift */; };
+		B9431E1925C70A2000B9E24F /* GraphQLResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E1825C70A2000B9E24F /* GraphQLResultTests.swift */; };
 		B9EB25CF25C1F74B0025D162 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */; };
 		B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F186FC25C1F8CC00C07410 /* Search.swift */; };
 		B9F1870325C1FB3F00C07410 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */; };
@@ -57,7 +60,6 @@
 		B911F39C25C1AD5A0082AE36 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B911F39E25C1AD5A0082AE36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B911F3A325C1AD5A0082AE36 /* GraphqlGithubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphqlGithubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B911F3A725C1AD5A0082AE36 /* GraphqlGithubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlGithubTests.swift; sourceTree = "<group>"; };
 		B911F3A925C1AD5A0082AE36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B911F3AE25C1AD5A0082AE36 /* GraphqlGithubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphqlGithubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B911F3B225C1AD5A0082AE36 /* GraphqlGithubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphqlGithubUITests.swift; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		B932B3F225C38A63004CBC17 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B932B40325C39D1A004CBC17 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B932B40825C39D24004CBC17 /* es-419 */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-419"; path = "es-419.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		B9431DFE25C6FE7E00B9E24F /* search.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = search.json; sourceTree = "<group>"; };
+		B9431E0625C6FF5A00B9E24F /* MockJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockJSON.swift; sourceTree = "<group>"; };
+		B9431E0F25C702BC00B9E24F /* FavoritesRepositoryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesRepositoryListViewModelTests.swift; sourceTree = "<group>"; };
+		B9431E1825C70A2000B9E24F /* GraphQLResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLResultTests.swift; sourceTree = "<group>"; };
 		B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		B9F186FC25C1F8CC00C07410 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLOperation.swift; sourceTree = "<group>"; };
@@ -147,7 +153,9 @@
 		B911F3A625C1AD5A0082AE36 /* GraphqlGithubTests */ = {
 			isa = PBXGroup;
 			children = (
-				B911F3A725C1AD5A0082AE36 /* GraphqlGithubTests.swift */,
+				B9431E1725C709FE00B9E24F /* GraphQL */,
+				B9431E0B25C7006700B9E24F /* ViewModels */,
+				B9431DFC25C6FE0700B9E24F /* JSON */,
 				B911F3A925C1AD5A0082AE36 /* Info.plist */,
 			);
 			path = GraphqlGithubTests;
@@ -180,6 +188,39 @@
 				B919CCDC25C4767900BB7993 /* Localizable.swift */,
 			);
 			path = PropertyWrappers;
+			sourceTree = "<group>";
+		};
+		B9431DFC25C6FE0700B9E24F /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B9431DFD25C6FE6000B9E24F /* Search */,
+				B9431E0625C6FF5A00B9E24F /* MockJSON.swift */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B9431DFD25C6FE6000B9E24F /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B9431DFE25C6FE7E00B9E24F /* search.json */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B9431E0B25C7006700B9E24F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				B9431E0F25C702BC00B9E24F /* FavoritesRepositoryListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B9431E1725C709FE00B9E24F /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				B9431E1825C70A2000B9E24F /* GraphQLResultTests.swift */,
+			);
+			path = GraphQL;
 			sourceTree = "<group>";
 		};
 		B9EB25CD25C1F6F00025D162 /* ViewModel */ = {
@@ -324,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9431DFF25C6FE7E00B9E24F /* search.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,7 +404,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B911F3A825C1AD5A0082AE36 /* GraphqlGithubTests.swift in Sources */,
+				B9431E1925C70A2000B9E24F /* GraphQLResultTests.swift in Sources */,
+				B9431E1025C702BC00B9E24F /* FavoritesRepositoryListViewModelTests.swift in Sources */,
+				B9431E0725C6FF5A00B9E24F /* MockJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -570,7 +614,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y8YFPUXR3W;
 				INFOPLIST_FILE = GraphqlGithubTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -592,7 +636,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y8YFPUXR3W;
 				INFOPLIST_FILE = GraphqlGithubTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
