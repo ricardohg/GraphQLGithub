@@ -13,4 +13,4 @@ Demo iOS app to fetch GraphQL Repositories
 - The user can add Items to favorites, favorites items are persisted in the app.
 - Selecting a cell will show the website for the repository, Using `WKWebview` as `UIViewRepresentable`.
 - Localization is included for english and spanish (Latin american).
-
+- iOS target is 14.1
