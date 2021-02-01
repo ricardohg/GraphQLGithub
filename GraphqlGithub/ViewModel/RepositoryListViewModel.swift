@@ -10,7 +10,7 @@ import Combine
 
 class RepositoryListViewModel: ObservableObject {
     
-    private let apiToken = "bearer a59e5b694b294326443d05e6fb803850034af003"
+    private let apiToken = "bearer \(AppConstants.githubToken)"
     private let graphQLURL = URL(string: "https://api.github.com/graphql")!
     
     @Published var repositories: [Repository] = []

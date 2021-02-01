@@ -28,6 +28,7 @@
 		B9431E1925C70A2000B9E24F /* GraphQLResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E1825C70A2000B9E24F /* GraphQLResultTests.swift */; };
 		B9431E2525C70EFE00B9E24F /* GraphQLProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E2425C70EFE00B9E24F /* GraphQLProvider.swift */; };
 		B9431E2D25C7100700B9E24F /* RepositoryListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E2C25C7100700B9E24F /* RepositoryListViewModelTests.swift */; };
+		B9431E4225C77C6E00B9E24F /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9431E4125C77C6E00B9E24F /* AppConstants.swift */; };
 		B9EB25CF25C1F74B0025D162 /* RepositoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */; };
 		B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F186FC25C1F8CC00C07410 /* Search.swift */; };
 		B9F1870325C1FB3F00C07410 /* GraphQLOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */; };
@@ -79,6 +80,7 @@
 		B9431E1825C70A2000B9E24F /* GraphQLResultTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLResultTests.swift; sourceTree = "<group>"; };
 		B9431E2425C70EFE00B9E24F /* GraphQLProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLProvider.swift; sourceTree = "<group>"; };
 		B9431E2C25C7100700B9E24F /* RepositoryListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModelTests.swift; sourceTree = "<group>"; };
+		B9431E4125C77C6E00B9E24F /* AppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		B9EB25CE25C1F74B0025D162 /* RepositoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryListViewModel.swift; sourceTree = "<group>"; };
 		B9F186FC25C1F8CC00C07410 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		B9F1870225C1FB3F00C07410 /* GraphQLOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphQLOperation.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 		B911F39425C1AD5A0082AE36 /* GraphqlGithub */ = {
 			isa = PBXGroup;
 			children = (
+				B9431E4025C77C5900B9E24F /* Constants */,
 				B9431E2325C70ED300B9E24F /* Protocols */,
 				B919CCDB25C475FE00BB7993 /* PropertyWrappers */,
 				B9F1870125C1FB2700C07410 /* GraphQLOperation */,
@@ -235,6 +238,14 @@
 				B9431E2425C70EFE00B9E24F /* GraphQLProvider.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B9431E4025C77C5900B9E24F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B9431E4125C77C6E00B9E24F /* AppConstants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		B9EB25CD25C1F6F00025D162 /* ViewModel */ = {
@@ -408,6 +419,7 @@
 				B90C308D25C4A80600AF9E14 /* FavoritesRepositoryListViewModel.swift in Sources */,
 				B9431E2525C70EFE00B9E24F /* GraphQLProvider.swift in Sources */,
 				B9F186FD25C1F8CC00C07410 /* Search.swift in Sources */,
+				B9431E4225C77C6E00B9E24F /* AppConstants.swift in Sources */,
 				B919CCE525C479BF00BB7993 /* ContentViewModel.swift in Sources */,
 				B90A5BD325C3213E005609CA /* RepositoryItemView.swift in Sources */,
 				B911F39625C1AD5A0082AE36 /* GraphqlGithubApp.swift in Sources */,
