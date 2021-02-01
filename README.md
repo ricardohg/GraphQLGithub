@@ -8,6 +8,7 @@ Demo iOS app to fetch GraphQL Repositories
 - GraphQL requests are handle via `URLSession`.
 - It doesn't use any external library so after setting your github token you are good to go.
 - It uses `MVVM` architecture, it help us to isolate View Logic, and it make it easier to test.
+- `Combine` is used to make web requests and process the response. Views are updated with `@Published` property Wrapper.
 - `GraphQLProvider` protocol is included to help us Mock GraphQL Requests.
 - Unit tests are included, also View Models are created with dependency Injection so they are easy testable, if further tests are needed.
 - The user can add Items to favorites, favorites items are persisted in the app.
